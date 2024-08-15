@@ -7,6 +7,7 @@ export const BannerProvider = ({ children }) => {
     const [banner, setBanner] = useState(null);
     const [timeRemaining, setTimeRemaining] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
+    console.log(`${import.meta.env.VITE_API_BASE_URL}/api/banner`)
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/banner`)
             .then(response => {
