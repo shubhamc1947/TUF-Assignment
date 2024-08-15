@@ -1,0 +1,22 @@
+.navigation {
+    background-color: #f9f9f9;
+    padding: 10px;
+    // width:100%;
+    // text-align: center;
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
