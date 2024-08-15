@@ -10,8 +10,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import './Login.scss';
 
 const Login = () => {
-    const [userId, setUserId] = useState('');
-    const [password, setPassword] = useState('');
+    const [userId, setUserId] = useState('admin');
+    const [password, setPassword] = useState('password');
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
