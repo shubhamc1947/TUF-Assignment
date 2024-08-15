@@ -11,8 +11,6 @@ const HomePage = () => {
             initial={{ opacity: 0, y: -50,scale:1 }} 
             animate={{ opacity: 1, y: 0,scale:1 }}   
             transition={{ duration: 0.8, ease: "linear" }} 
-            // whileTap={{ scale: 0.95 }} 
-            // whileHover={{scale:1.02}}
             className="homepage"
         >
             <Navigation/>

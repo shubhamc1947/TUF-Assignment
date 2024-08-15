@@ -23,14 +23,14 @@ const Dashboard = () => {
   });
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/banner").then((response) => {
+    axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/banner`).then((response) => {
       const data = response.data;
       const formattedDate = formatDateToLocal(data.targetDate);
       setBanner({
         description: data.description || "",
         targetDate: formattedDate || "",
         link: data.link || "",
-        isVisible: data.isVisible || true,
+        isVisible: data.isVisible || false,
       });
     });
   }, []);
@@ -53,11 +53,12 @@ const Dashboard = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/api/banner", banner)
+      .post(`${import.meta.env.VITE_API_BASE_URL}/api/banner`, banner)
       .then((response) => toast.success(response.data.message))
       .catch((response)=> toast.error('Something went wrong : ',response.data.message));
   };
 
+  // alert(banner.isVisible)
   return (
     <div className="dashboard-container">
       <div className="heading">
